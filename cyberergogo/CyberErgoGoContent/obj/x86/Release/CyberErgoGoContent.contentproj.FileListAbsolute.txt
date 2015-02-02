@@ -1,0 +1,6 @@
+C:\Users\fPrager\Dropbox\cyberergogo\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\ResolveAssemblyReference.cache
+D:\Studium\PaceInvader\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\CyberErgoGoContent.contentprojResolveAssemblyReference.cache
+D:\InvaderGit\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\kp\Desktop\CyberErgoGo\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\kp\Desktop\Desktop_23_05_2014\Fahrrad_CyberErgoGo\CyberErgoGo\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\CyberErgoGoContent.contentprojResolveAssemblyReference.cache
+D:\cyberergogo\CyberErgoGo\CyberErgoGoContent\obj\x86\Release\CyberErgoGoContent.contentprojResolveAssemblyReference.cache

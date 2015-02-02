@@ -1,0 +1,870 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CyberErgoGo</name>
+    </assembly>
+    <members>
+        <member name="T:CyberErgoGo.Condition">
+            <summary>
+            Stores current values of the game.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Billboard">
+            <summary>
+            This class describes an billboard in worldposition. 
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Program.Main(System.String[])">
+            <summary>
+            Der Haupteinstiegspunkt für die Anwendung.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LevelLogic">
+            <summary>
+            The playing of a level should capsulated from the presentation or data of the level. 
+            So there exists an extra class for the logic. 
+            This offers the possibility to change the gameplay whithout effecting the presentation or data.
+            Possible differences could be done in a freeride-mode, a wild chase or an experimanting part.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelLogic.Update(Microsoft.Xna.Framework.GameTime,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            The update-method handles the level changes.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelLogic.GetPlayingTerrain">
+            <summary>
+            Passes the terrain of the level.
+            <returns>the terrain of the playing level</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelLogic.GetMovingObject">
+            <summary>
+            Passes the MovingObject
+            <returns>the MovingObject</returns>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LevelScreen">
+            <summary>
+            It represents the playing of a level.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.GameScreen">
+            <summary>
+            This is a screen of the game. 
+            It represents a (visual) game state, like "in optionmode", "at the startscreen" or "playing a level".
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.#ctor(System.String)">
+            <summary>
+            This is a screen of the game. 
+            It represents a (visual) game state, like "in optionmode", "at the startscreen" or "playing a level".
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Initialize">
+            <summary>
+            Initialization of the screen
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.LoadContent">
+            <summary>
+            Loading all data of the screen
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.SetOnUpdateList(CyberErgoGo.UpdateMethod)">
+            <summary>
+            Add one method to the list of updating methods
+            <param name="method">the new method</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.SetScreenManager(CyberErgoGo.ScreenManager,Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            Sets the references to the connected ScreenMananger and GraphicDevice
+            <param name="device">the used GraphicDevice</param>
+            <param name="manager">the ScreenManager, which handles this screen</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Exit">
+            <summary>
+            Unloading the screen
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Open">
+            <summary>
+            The screen "says" his screenmanager to catch the focus.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Sleep">
+            <summary>
+            It changes the screen to the background mode.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Refresh the screen (depending on the time).
+            <param name="gameTime">the current time of the game</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.GetFocus">
+            <summary>
+            The screen become active (just internal).
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.ChangeState(CyberErgoGo.ScreenState)">
+            <summary>
+            The external change of the screenstate.
+            <param name="state">the wanted state</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.PreDraw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This method is called to prepare the presentation of the screen.
+            <param name="gameTime">the current time of the game
+            TODO: Wird das genutzt?</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.Draw(CyberErgoGo.Camera)">
+            <summary>
+            This method handles the presentation or "drawing" of the screen.
+            <param name="camera">the view on the screen</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.PostDraw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            This method finishs the representation of the screen.
+            <param name="gameTime">the current time of the game
+            TODO: Wird das genutzt?</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.GameScreen.ToString">
+            <summary>
+            This method gives the identifier of the screen.
+            <returns>the identifier</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.LoadContent">
+            <summary>
+            To load a level.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.SetEffectParameters">
+            <summary>
+            The constant parameters should be set at the beginning or at few changes to reduce the useless access rate.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.SetTerrainShadingParameters">
+            <summary>
+            That the paramers depending to the terrain shading
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.UpdateTerrainData">
+            <summary>
+            Update the terraindata, if the terrain is changing.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawStreet">
+            <summary>
+            Draw the street (on the ground).
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawTerrain(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Draw the ground.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawCanvas(CyberErgoGo.MenuCanvas)">
+            <summary>
+            Draw the MenuCanvas
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawTime(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+            Draw the MenuCanvas
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawCheckpoints(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Draw the Checkpoints.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawTerrainObjects">
+            <summary>
+            Draw the objects of the terrain, like trees, bushes and so on.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawGameObjects(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Draw objects which are important to the gameplay.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.DrawMovingObject(Microsoft.Xna.Framework.Matrix,Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Draw the flying/moving/controlled object. 
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.Draw(CyberErgoGo.Camera)">
+            <summary>
+            This methods handles the drawing of the level.
+            Important in this method is the sequential construction of the level screen.
+            - we make or show the terrain
+            - we criss-cross a nice street
+            - we put some terrain objects on it
+            - we show some important gameojects
+            - we set the player in the world (draw the moving object)
+            <param name="camera">the specific view on the level</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelScreen.ConditionChanged(CyberErgoGo.Condition,System.Collections.Generic.List{CyberErgoGo.ParameterIdentifier})">
+            <summary>
+            Listen to changes.
+            <example>- changes of the terrain result in changes of the stored terrain-buffers</example>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LevelScreen.TerrainDrawingData">
+            <summary>
+            This simple structure stores the few important values of the terrain.
+            It's just loaded at the beginning and at changes of the terrain.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.StaticTerrain">
+            <summary>
+            This version of a terrain represents a static ground. Every shape is clear at the beginning and normaly wont change.
+            This fact simplifies the drawing of the terrain data (no heightmapping or normal calculation while rendering).
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Terrain">
+            <summary>
+            This class is the abstraction of a terrain. 
+            It's not important to know how the terrain data looks like or how it will be drawn (if it is static or dynamic).
+            This pattern offers the ability to implement a bridge pattern.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.RenderStreetOnTerrain(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            This method draw the street on the terrain. It brings the terrain into line with the street.
+            <param name="Device">the graphic device</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.RenderStreetOnTerrainWithSmoothing(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            This method draw the street on the terrain AFTER smoothing the terrain to an island...wow. It brings the terrain into line with the street.
+            <param name="Device">the graphic device</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.RenderStreetOnTerrainWithSmoothingAsIsland(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            This method draw the street on the smoothed terrain with an underlying static terrain in the shape of an island. It brings the terrain into line with the street.
+            <param name="Device">the graphic device</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GenerateHeightMapWithStreet">
+            <summary>
+            This method sets the rendertargets to draw the street texture on the terrain's heightfield and starts the rendering process.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.SetUpBuffers">
+            <summary>
+            This method should be overridden by the subclasses, which are different in ther vertex-structures -> buffers
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GetStreet">
+            <summary>
+            Returns the street with its points and texture.
+            <returns>the street of the terrain</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GetIndexBuffer">
+            <summary>
+            Returns the index buffer for drawing.
+            <returns>index buffer</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GetVertexBuffer">
+            <summary>
+            Returns the vertex buffer for drawing.
+            <returns>vertex buffer</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GetNumberOfVertices">
+            <summary>
+            This getter returns the number of vertices (for drawing). 
+            It is abstract because the abstract terrain can't know his vertices and how much it has.
+            <returns>the number of terrain vertices</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Terrain.GetNumberOfIndices">
+            <summary>
+            This getter returns the number of indices (for drawing). 
+            It is abstract because the abstract terrain can't know his vertices and how much indices it needs to index them.
+            <returns>the number of indices</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.SetUpBuffers">
+            <summary>
+            Override the method to set the buffer. It is important because the vertex structure coudl be diffrent to a nother version of the terrain. 
+            This influences the uffer structure.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.SetUpVertices">
+            <summary>
+            Set up the list of vertices with positions (depending on the height data and field dimensions).
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.SetUpIndices">
+            <summary>
+            To set up the indices of the terrain
+            TODO: Kann das in die parent classe?
+            gibt es unterschiede in unterklassen?
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.CalculateNormals">
+            <summary>
+            Calculates the normals of the terrain vertices depending on the direct neighborhood. 
+            It garanties a nice shading. 
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.LoadHeightData">
+            <summary>
+            Load the height values stored in a heigh-field-texture
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.GetNumberOfVertices">
+            <summary>
+            Returns the number of vertices.
+            <returns>number of vertices</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.StaticTerrain.GetNumberOfIndices">
+            <summary>
+            Returns the number of indices.
+            <returns>number of indices</returns>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.AnimatedCanvas">
+            <summary>
+            This class handles an animation and represents a special MenuCanvas (containing multiple textures) in context with a frame-rate.
+            The most important addition is the Update-Method to get the animation (texture change with time).
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.#ctor(System.Single,Microsoft.Xna.Framework.Vector3,System.Single,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D[],System.Single)">
+            <summary>
+             Declares an animated canvas.
+            </summary>
+            <param name="frameTime">the elapsed time in milliseconds to change to the next texture</param>
+            <param name="position">the position on the screen</param>
+            <param name="width">the width of the canvas</param>
+            <param name="height">the heigth of the canvas</param>
+            <param name="textures">the array of textures/frames</param>
+            <param name="opacity"></param>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.#ctor(System.Single,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D[],System.Single)">
+            <summary>
+             Declares an animated canvas.
+            </summary>
+            <param name="frameTime">the elapsed time in milliseconds to change to the next texture</param>
+            <param name="position">the position on the screen</param>
+            <param name="zOffset">the offset in depth</param>
+            <param name="width">the width of the canvas</param>
+            <param name="height">the heigth of the canvas</param>
+            <param name="textures">the array of textures/frames</param>
+            <param name="opacity"></param>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.#ctor(System.Single,Microsoft.Xna.Framework.Vector2,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Graphics.Texture2D[],System.Single,Microsoft.Xna.Framework.Vector3)">
+            <summary>
+             Declares an animated canvas.
+            </summary>
+            <param name="frameTime">the elapsed time in milliseconds to change to the next texture</param>
+            <param name="position">the position on the screen</param>
+            <param name="zOffset">the offset in depth</param>
+            <param name="width">the width of the canvas</param>
+            <param name="height">the heigth of the canvas</param>
+            <param name="textures">the array of textures/frames</param>
+            <param name="opacity"></param>
+            <param name="color">the backgroundcolor of the canvas</param>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.Animate(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            the method to animate the canvas depanding on the time
+            </summary>
+            <param name="gameTime">the time of the game</param>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.Animate(System.Single)">
+            <summary>
+            the method to animate the canvas depanding on the elapsed time
+            </summary>
+            <param name="elapsedTime">the elapsed time depanding on the least animate-call in milliseconds</param>
+        </member>
+        <member name="M:CyberErgoGo.AnimatedCanvas.NextFrame">
+            <summary>
+            change to the next frame of the canvas
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.ConditionHandler">
+            <summary>
+            Stores states of the game and update the observers.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.ScreenState">
+            <summary>
+            The GameScreen can be in several states. 
+            The states is important to switch between screens or activate them.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.ScreenManager">
+            <summary>
+            This class manages the game screens.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.ScreenManager.UnregisterScreen(CyberErgoGo.GameScreen)">
+            <summary>
+            This method will remove a screen to the possible shown screens.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.ScreenManager.RegisterScreen(CyberErgoGo.GameScreen)">
+            <summary>
+            This method will add a screen to the possible shown screens.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.ScreenManager.Activate(CyberErgoGo.GameScreen)">
+            <summary>
+            This method focuses the game on this screen. It's important that the screen is allready registred in the screen list and that the screen is loaded and ready to be shown.
+            It's important that the screen is allready registred in the screen list and that the screen is loaded and ready to be shown.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.ScreenManager.UpdateScreens(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Update the screens which has the focus.
+            <param name="gameTime">the current time of the game</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.ScreenManager.DrawScreens(CyberErgoGo.Camera)">
+            <summary>
+            Present the focused screen.
+            <param name="camera">the specific view on the screens</param>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Util">
+            <summary>
+            This class just stores useful functions and global instances of important classes.
+            It is a singleton to garanty the right handling of global variables over the whole game.
+            <example>
+            - draw full screen rectangles (sounds silly, but is important!)
+            - handles the loading of files
+            - access to the graphic device, content manager
+            </example>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.#ctor">
+            <summary>
+            the constructor is private that it's not possible to make an "external" instance
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.GetInstance">
+            <summary>
+            This mehtod handles the access to the only one instance of Util
+            <returns>the global Util-instance</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.SetGraphicDevice(Microsoft.Xna.Framework.Graphics.GraphicsDevice)">
+            <summary>
+            At the beginning the global instance of the graphic device will be setted by the MainGame
+            <param name="device">the graphic device of the game</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.SetContentManager(Microsoft.Xna.Framework.Content.ContentManager)">
+            <summary>
+            At the beginning the global instance of the content manager will be setted by the MainGame
+            <param name="content">the content manager of the xna-game</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.DrawFullscreenQuad(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.RenderTarget2D,Microsoft.Xna.Framework.Graphics.Effect)">
+            <summary>
+            Helper for drawing a texture into a rendertarget, using
+            a custom shader to apply postprocessing effects.
+            <param name="effect">the udes effect</param>
+            <param name="renderTarget">the target of the quad/rectangle represantation</param>
+            <param name="texture">the texture of the quad/rectangle</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.DrawFullscreenQuad(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32,System.Int32,System.Int32,Microsoft.Xna.Framework.Graphics.Effect)">
+            <summary>
+            Helper for drawing a texture into the current rendertarget,
+            using a custom shader to apply postprocessing effects.
+            <param name="effect">the used effect</param>
+            <param name="height">the height of the quad/rectangle</param>
+            <param name="texture">the texture of the quad/rectangle</param>
+            <param name="width">the width of the quad/rectangle</param>
+            <param name="x">the left offset/border 
+            (It is important to be able to draw a left screen and a "right moved" right screen)</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.ComputeGaussian(System.Single,System.Single)">
+            <summary>
+            Evaluates a single point on the gaussian falloff curve.
+            Used for setting up the blur filter weightings.
+            <param name="n">thats the distance to the middle
+            TODO: Überprüfen</param>
+            <param name="theta">thats the shaping of the gaussian curve</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(Microsoft.Xna.Framework.Graphics.Effect@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load an effect file
+            <param name="directory"> the directory to the file</param>
+            <param name="effect">the effect instance which will hold the effect</param>
+            <param name="fileName">the name of the effect/file</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(Microsoft.Xna.Framework.Media.Song@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load a sound file
+            <param name="directory"> the directory to the file</param>
+            <param name="effect">the effect instance which will hold the effect</param>
+            <param name="fileName">the name of the effect/file</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(Microsoft.Xna.Framework.Graphics.Texture2D@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load a texture file
+            <param name="directory"> the directory to the file</param>
+            <param name="texture">the texture instance which will hold the image</param>
+            <param name="fileName">the name of the texture/file</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(Microsoft.Xna.Framework.Graphics.Model@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load a model
+            <param name="directory"> the directory to the file</param>
+            <param name="model">the model instance which will hold the pointnet</param>
+            <param name="fileName">the name of the model/file</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(Microsoft.Xna.Framework.Graphics.SpriteFont@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load a font
+            <param name="directory"> the directory to the file</param>
+            <param name="font">the font object</param>
+            <param name="fileName">the name of the model/file</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Util.LoadFile(CyberErgoGoLevelData.LevelData[]@,System.String,System.String)">
+            <summary>
+            This methods offers an easy way to load a list of level datas.
+            XNA offers an interesting way to serialize XML-files. 
+            This file just uses the data structure of LevelData (in a seperate library).
+            The XMLSerialization is a part of the ConentManager.
+            <param name="directory"> the directory to the file</param>
+            <param name="levelData">the list of level datas, which stores the inforamtions of some levels</param>
+            <param name="fileName">the name of the xml/file</param>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.ScreenLogic">
+            <summary>
+            This class should handle the right sequence of the screens.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.OptionScreen">
+            <summary>
+            In this screen you can see and edit the options of the game.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.DegreeOfDifficulty">
+            <summary>
+            Every a level should be characterized by its difficulty.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Level">
+            <summary>
+            This is a playable level of the game.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Level.GetPlayingTerrain">
+            <summary>
+            Get access to the terrain.
+            This is usefull to handle the right drawing of the terrain, for instance.
+            <returns>the terrain</returns>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LoadingScreen">
+            <summary>
+            This screen shows the starting of the game
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.BikeHandler">
+            <summary>
+            Pulls the values of the Bike-Controller.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LevelSelectionScreen">
+            <summary>
+            In this screen you can choose a level to play.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelSelectionScreen.DrawCanvas(CyberErgoGo.MenuCanvas)">
+            <summary>
+            Draw the MenuCanvas
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.SettingsManager">
+            <summary>
+            Stores all settings. It's a singleton to store the settings global.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.SettingsManager.#ctor">
+            <summary>
+            Private constructor to make sure there is just one instance.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.SettingsManager.getInstance">
+            <summary>
+            The access to the instance via this method.
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.GameFigure">
+            <summary>
+            This class handles the moving and reactions of the game figure, which is riding on the vehicle (e.g. the space invader).
+            The figure is an physical object with an passiv moving (just follows the vehicle).
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.LevelContainer">
+            <summary>
+            The LevelContainer load and stores all playable level.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.LevelContainer.#ctor">
+            <summary>
+            Returns the width of the texture.
+            <returns>the width of the texture</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.#ctor">
+                        Constructs a new empty Bezier curve. Use one of these methods
+                        to add points: SetControlPoints, Interpolate, SamplePoints.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.SetControlPoints(System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3})">
+                        Sets the control points of this Bezier path.
+                        Points 0-3 forms the first Bezier curve, points 
+                        3-6 forms the second curve, etc.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.GetControlPoints">
+                        Returns the control points for this Bezier curve.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.Interpolate(System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Single)">
+                        Calculates a Bezier interpolated path for the given points.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.SamplePoints(System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Single,System.Single,System.Single)">
+                        Sample the given points as a Bezier path.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.CalculateBezierPoint(System.Int32,System.Single)">
+                        Caluclates a point on the path.
+                    
+                        @param curveIndex The index of the curve that the point is on. For example, 
+                        the second curve (index 1) is the curve with controlpoints 3, 4, 5, and 6.
+                    
+                        @param t The paramater indicating where on the curve the point is. 0 corresponds 
+                        to the "left" point, 1 corresponds to the "right" end point.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.GetDrawingPoints0">
+                        Gets the drawing points. This implementation simply calculates a certain number
+                        of points per curve.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.GetDrawingPoints1">
+                        Gets the drawing points. This implementation simply calculates a certain number
+                        of points per curve.
+            
+                        This is a lsightly different inplementation from the one above.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.GetDrawingPoints2">
+                        This gets the drawing points of a bezier curve, using recursive division,
+                        which results in less points for the same accuracy as the above implementation.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.FindDrawingPoints(System.Int32,System.Single,System.Single,System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Int32)">
+                        @returns the number of points added.
+        </member>
+        <member name="M:CyberErgoGo.BezierPath.CalculateBezierPoint(System.Single,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3,Microsoft.Xna.Framework.Vector3)">
+                        Caluclates a point on the Bezier curve represented with the four controlpoints given.
+        </member>
+        <member name="M:CyberErgoGo.VertexHelper.ExtractTrianglesFrom(Microsoft.Xna.Framework.Graphics.Model,System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Collections.Generic.List{CyberErgoGo.VertexHelper.TriangleVertexIndices},Microsoft.Xna.Framework.Matrix)">
+            <summary>
+            Extract the vertices and indices from the specified model
+            </summary>
+            <param name="vertices">Output the list of vertices</param>
+            <param name="indices">Output the list of indices</param>
+            <param name="worldPosition">The models world position or use Matrix.Identity for object space</param>
+        </member>
+        <member name="M:CyberErgoGo.VertexHelper.GetAbsoluteTransform(Microsoft.Xna.Framework.Graphics.ModelBone)">
+            <summary>
+            Transform by a bone position or Identity if no bone is supplied
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.VertexHelper.ExtractModelMeshData(Microsoft.Xna.Framework.Graphics.ModelMesh,Microsoft.Xna.Framework.Matrix@,System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Collections.Generic.List{CyberErgoGo.VertexHelper.TriangleVertexIndices})">
+            <summary>
+            Get all the triangles from all mesh parts
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.VertexHelper.ExtractModelMeshPartData(Microsoft.Xna.Framework.Graphics.ModelMeshPart,Microsoft.Xna.Framework.Matrix@,System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3},System.Collections.Generic.List{CyberErgoGo.VertexHelper.TriangleVertexIndices})">
+            <summary>
+            Get all the triangles from each mesh part (Changed for XNA 4)
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.MainGame">
+            <summary>
+            Dies ist der Haupttyp für Ihr Spiel
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.MainGame.Initialize">
+            <summary>
+            Ermöglicht dem Spiel, alle Initialisierungen durchzuführen, die es benötigt, bevor die Ausführung gestartet wird.
+            Hier können erforderliche Dienste abgefragt und alle nicht mit Grafiken
+            verbundenen Inhalte geladen werden.  Bei Aufruf von base.Initialize werden alle Komponenten aufgezählt
+            sowie initialisiert.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.MainGame.LoadContent">
+            <summary>
+            LoadContent wird einmal pro Spiel aufgerufen und ist der Platz, wo
+            Ihr gesamter Content geladen wird.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.MainGame.UnloadContent">
+            <summary>
+            UnloadContent wird einmal pro Spiel aufgerufen und ist der Ort, wo
+            Ihr gesamter Content entladen wird.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.MainGame.Update(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Ermöglicht dem Spiel die Ausführung der Logik, wie zum Beispiel Aktualisierung der Welt,
+            Überprüfung auf Kollisionen, Erfassung von Eingaben und Abspielen von Ton.
+            </summary>
+            <param name="gameTime">Bietet einen Schnappschuss der Timing-Werte.</param>
+        </member>
+        <member name="M:CyberErgoGo.MainGame.Draw(Microsoft.Xna.Framework.GameTime)">
+            <summary>
+            Dies wird aufgerufen, wenn das Spiel selbst zeichnen soll.
+            </summary>
+            <param name="gameTime">Bietet einen Schnappschuss der Timing-Werte.</param>
+        </member>
+        <member name="T:CyberErgoGo.HeightMap">
+            <summary>
+            This class handles the access to a highfield.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.HeightMap.GetWidth">
+            <summary>
+            Returns the width of the texture.
+            <returns>the width of the texture</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.HeightMap.GetHeight">
+            <summary>
+            Returns the height of the texture.
+            <returns>the height of the texture</returns>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.HeightMap.GetMap">
+            <summary>
+            Returns the texture.
+            <returns>the texture</returns>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Street">
+            <summary>
+            This class represents the street or the way of the game.
+            It is the simple spline curve threw the terrain. It doesn't adjust to the terrain (the other way around)!
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.SetSplinePoints(System.Collections.Generic.List{Microsoft.Xna.Framework.Vector3})">
+            <summary>
+            To change the splinepoints of the street. This forces a new calculation of the street points and changes it's shape 
+            (which should forces the terrain to update!).
+            <param name="splinePoints">the new spline points</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.SetUpStreet">
+            <summary>
+            Calculates all important points an vertices of the street and generate the street texture.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.SetUpStreetPoints">
+            <summary>
+            Fill the lists of important points.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.SetUpStreetVertices">
+            <summary>
+            That up the vertices of the street.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.RenderStreetToTexture">
+            <summary>
+            To get a nice height-texture we render the street in a picture from above.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.SetStreetEffectParameters(System.Single,System.Single,System.Boolean)">
+            <summary>
+            Set the parameters of the street effect, to fade or blur horizontal or vertical.
+            <param name="dx">fading/bluring in horizontal direction, set zero to fade/blur vertical</param>
+            <param name="dy">fading/bluring in vertical direction, set zero to fade/blur horizontal</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.DrawStreet">
+             <summary>
+            Draw the street from above.
+             </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.ConditionChanged(CyberErgoGo.Condition,System.Collections.Generic.List{CyberErgoGo.ParameterIdentifier})">
+            <summary>
+            Listen to changes in the terrain, this forces a new calculation of the street
+            <param name="condition">the (external) changed condition</param>
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Street.GetStreetTexture">
+            <summary>
+            Returns the generated heightfield of the street.
+            <returns>(height-)texture of the street</returns>
+            </summary>
+        </member>
+        <member name="T:CyberErgoGo.Waterplane">
+            <summary>
+            This class handles the water plane/sea of the game.
+            </summary>
+        </member>
+        <member name="M:CyberErgoGo.Waterplane.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single,Microsoft.Xna.Framework.Color)">
+            <summary>
+            create a planar water surface parallel to the X-Y-Plain
+            </summary>
+            <param name="minX">smallest X coord</param>
+            <param name="maxX">biggest X coord</param>
+            <param name="minY">smallest Y coord</param>
+            <param name="maxY">biggest Y coord</param>
+            <param name="level">the z-level of the plane</param>
+            <param name="waterColor">color of the surface</param>
+        </member>
+        <member name="M:CyberErgoGo.Waterplane.#ctor(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            create a planar water surface parallel to the X-Y-Plain in CornFlowerBlue
+            </summary>
+            <param name="minX">smallest X coord</param>
+            <param name="maxX">biggest X coord</param>
+            <param name="minY">smallest Y coord</param>
+            <param name="maxY">biggest Y coord</param>
+            <param name="level">the z-level of the plane</param>
+        </member>
+        <member name="M:CyberErgoGo.Waterplane.#ctor(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            create a planar water surface on the X-Y-Plain in CornFlowerBlue
+            </summary>
+            <param name="minX">smallest X coord</param>
+            <param name="maxX">biggest X coord</param>
+            <param name="minY">smallest Y coord</param>
+            <param name="maxY">biggest Y coord</param>
+            <param name="level">the z-level of the plane</param>
+        </member>
+        <member name="M:CyberErgoGo.Waterplane.SetUpBuffers">
+            <summary>
+            Set up buffers with colored vertices
+            </summary>
+        </member>
+    </members>
+</doc>

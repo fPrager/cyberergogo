@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberErgoGo", "CyberErgoGo\CyberErgoGo\CyberErgoGo.csproj", "{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberErgoGoContent", "CyberErgoGo\CyberErgoGoContent\CyberErgoGoContent.contentproj", "{C2A178CE-83AB-4BF3-A14B-176A039784FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberErgoGoLevelData", "LevelData\CyberErgoGoLevelData.csproj", "{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelLibrary", "LevelLibrary\LevelLibrary.csproj", "{20027B5B-0F35-4ABB-95D9-C057CBA3B093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelContentPipelineExtension", "LevelContentPipelineExtension\LevelContentPipelineExtension.csproj", "{6A933D24-1D03-4110-9478-78BB5B7FBA04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}.Debug|x86.ActiveCfg = Debug|x86
+		{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}.Debug|x86.Build.0 = Debug|x86
+		{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}.Release|x86.ActiveCfg = Release|x86
+		{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}.Release|x86.Build.0 = Release|x86
+		{C2A178CE-83AB-4BF3-A14B-176A039784FD}.Debug|x86.ActiveCfg = Debug|x86
+		{C2A178CE-83AB-4BF3-A14B-176A039784FD}.Release|x86.ActiveCfg = Release|x86
+		{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}.Debug|x86.ActiveCfg = Debug|x86
+		{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}.Debug|x86.Build.0 = Debug|x86
+		{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}.Release|x86.ActiveCfg = Release|x86
+		{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}.Release|x86.Build.0 = Release|x86
+		{20027B5B-0F35-4ABB-95D9-C057CBA3B093}.Debug|x86.ActiveCfg = Debug|x86
+		{20027B5B-0F35-4ABB-95D9-C057CBA3B093}.Debug|x86.Build.0 = Debug|x86
+		{20027B5B-0F35-4ABB-95D9-C057CBA3B093}.Release|x86.ActiveCfg = Release|x86
+		{20027B5B-0F35-4ABB-95D9-C057CBA3B093}.Release|x86.Build.0 = Release|x86
+		{6A933D24-1D03-4110-9478-78BB5B7FBA04}.Debug|x86.ActiveCfg = Debug|x86
+		{6A933D24-1D03-4110-9478-78BB5B7FBA04}.Debug|x86.Build.0 = Debug|x86
+		{6A933D24-1D03-4110-9478-78BB5B7FBA04}.Release|x86.ActiveCfg = Release|x86
+		{6A933D24-1D03-4110-9478-78BB5B7FBA04}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

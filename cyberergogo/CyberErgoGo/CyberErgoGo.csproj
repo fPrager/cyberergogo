@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{CF2C6710-9BD3-4D20-9EA0-5AB3CE5078E2}</ProjectGuid>
+    <ProjectTypeGuids>{6D335F3A-9D43-41b4-9D22-F6F17C4BE596};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyberErgoGo</RootNamespace>
+    <AssemblyName>CyberErgoGo</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <XnaFrameworkVersion>v4.0</XnaFrameworkVersion>
+    <XnaPlatform>Windows</XnaPlatform>
+    <XnaProfile>HiDef</XnaProfile>
+    <XnaCrossPlatformGroupID>439dbeec-002a-49fc-84ee-5f0b1de13380</XnaCrossPlatformGroupID>
+    <XnaOutputType>Game</XnaOutputType>
+    <ApplicationIcon>Icon2.ico</ApplicationIcon>
+    <Thumbnail>GameThumbnail.png</Thumbnail>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>false</XnaCompressContent>
+    <DocumentationFile>bin\x86\Debug\CyberErgoGo.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>x86</PlatformTarget>
+    <XnaCompressContent>true</XnaCompressContent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BEPUphysics">
+      <HintPath>..\..\BEPUphysics\BEPUphysics.dll</HintPath>
+    </Reference>
+    <Reference Include="BikeControls">
+      <HintPath>..\..\RelatedProjects\DLL\BikeControls\BikeControls\bin\Debug\BikeControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.GamerServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\CollisionChecker.cs" />
+    <Compile Include="Core\OverallSetting.cs" />
+    <Compile Include="Core\ThreadManager.cs" />
+    <Compile Include="Game\Environment\BillboardCanon.cs" />
+    <Compile Include="Game\Environment\BillboardInvader.cs" />
+    <Compile Include="Game\Environment\BillboardTree.cs" />
+    <Compile Include="Game\Environment\Skydome.cs" />
+    <Compile Include="Game\Environment\Waterplane.cs" />
+    <Compile Include="Game\LevelSelection\StreetSign.cs" />
+    <Compile Include="Game\Level\Checkpoint.cs" />
+    <Compile Include="Game\Level\GameFigure.cs" />
+    <Compile Include="Game\Level\GameObject.cs" />
+    <Compile Include="Game\MovingObjects\BikeModel.cs" />
+    <Compile Include="Game\MovingObjects\Physics\FlyingSphereWithMass.cs" />
+    <Compile Include="Game\MovingObjects\VWCPWheelPhysic2.cs" />
+    <Compile Include="Game\MovingObjects\VWCPWheelPhysic3.cs" />
+    <Compile Include="Game\MovingObjects\Physics\BikePhysic.cs" />
+    <Compile Include="Game\MovingObjects\Physics\FlyingSphere.cs" />
+    <Compile Include="Game\MovingObjects\Cube.cs" />
+    <Compile Include="Game\MovingObjects\Physics\FlyingObject.cs" />
+    <Compile Include="Game\MovingObjects\NotPhysical.cs" />
+    <Compile Include="Game\MovingObjects\PhysicalObject.cs" />
+    <Compile Include="Game\MovingObjects\Physics\IPhysicalRepresentation.cs" />
+    <Compile Include="Game\MovingObjects\Physics\RollingWheel.cs" />
+    <Compile Include="Game\MovingObjects\Physics\RollingSphere.cs" />
+    <Compile Include="Game\MovingObjects\SimpleWheel.cs" />
+    <Compile Include="Game\MovingObjects\VWCP.cs" />
+    <Compile Include="Game\MovingObjects\VWCPDiskPhysic.cs" />
+    <Compile Include="Game\MovingObjects\VWCPSpherePhysic.cs" />
+    <Compile Include="Game\MovingObjects\VWCPWheelPhysic.cs" />
+    <Compile Include="Handler\OptionCondition.cs" />
+    <Compile Include="Helper\AnimatedBillboard.cs" />
+    <Compile Include="Helper\AnimatedCanvas.cs" />
+    <Compile Include="Helper\BikeSelectionHelper.cs" />
+    <Compile Include="Helper\Billboard.cs" />
+    <Compile Include="Helper\PerlinGenerator.cs" />
+    <Compile Include="Helper\Selection.cs" />
+    <Compile Include="Helper\MenuCanvas.cs" />
+    <Compile Include="Helper\SoundManager.cs" />
+    <Compile Include="Helper\TimeDisplay.cs" />
+    <Compile Include="Helper\VertexHelper.cs" />
+    <Compile Include="MovingBehaviour\ActiveBehaviour.cs" />
+    <Compile Include="MovingBehaviour\Behaviour.cs" />
+    <Compile Include="Camera\Camera.cs" />
+    <Compile Include="MovingBehaviour\HorizontalRotation.cs" />
+    <Compile Include="MovingBehaviour\PassivBehaviourWithRotation.cs" />
+    <Compile Include="MovingBehaviour\FreeMouseKeyboardControlled.cs" />
+    <Compile Include="MovingBehaviour\IObjectWithBehaviour.cs" />
+    <Compile Include="MovingBehaviour\KeyboardControlled.cs" />
+    <Compile Include="MovingBehaviour\NotMoving.cs" />
+    <Compile Include="MovingBehaviour\PassivBehaviour.cs" />
+    <Compile Include="Camera\Vector.cs" />
+    <Compile Include="Core\ScreenLogic.cs" />
+    <Compile Include="Game\Level\StaticTerrain.cs" />
+    <Compile Include="Game\MovingObjects\SimpleModel.cs" />
+    <Compile Include="Game\MovingObjects\XWing.cs" />
+    <Compile Include="Handler\Parameter.cs" />
+    <Compile Include="Handler\BikeCondition.cs" />
+    <Compile Include="Handler\GamePlayCondition.cs" />
+    <Compile Include="Handler\IConditionObserver.cs" />
+    <Compile Include="Handler\KeyBoardCondition.cs" />
+    <Compile Include="Handler\LevelCondition.cs" />
+    <Compile Include="Handler\MovingObjectCondition.cs" />
+    <Compile Include="Handler\TerrainCondition.cs" />
+    <Compile Include="Handler\ViewCondition.cs" />
+    <Compile Include="Helper\BezierPath.cs" />
+    <Compile Include="Helper\UpdateMethod.cs" />
+    <Compile Include="Helper\Util.cs" />
+    <Compile Include="Game\LevelSelection\LevelContainer.cs" />
+    <Compile Include="Helper\HeightMap.cs" />
+    <Compile Include="Game\Level\LevelLogic.cs" />
+    <Compile Include="Game\Level\Street.cs" />
+    <Compile Include="Game\Level\Terrain.cs" />
+    <Compile Include="Game\MovingObjects\MovingObject.cs" />
+    <Compile Include="Game\Options\SettingManager.cs" />
+    <Compile Include="Core\ScreenManager.cs" />
+    <Compile Include="Handler\BikeHandler.cs" />
+    <Compile Include="Core\GameScreen.cs" />
+    <Compile Include="Game\Level\Level.cs" />
+    <Compile Include="Game\Level\LevelScreen.cs" />
+    <Compile Include="Game\LevelSelection\LevelSelectionScreen.cs" />
+    <Compile Include="Game\Options\OptionScreen.cs" />
+    <Compile Include="MovingBehaviour\PhysicalBehaviour.cs" />
+    <Compile Include="VertexStructures\VertexStructures.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\Program.cs" />
+    <Compile Include="Core\MainGame.cs" />
+    <Compile Include="Game\Start\StartScreen.cs" />
+    <Compile Include="Handler\Condition.cs" />
+    <Compile Include="Handler\ConditionHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fog.png" />
+    <Content Include="Game.ico" />
+    <Content Include="GameThumbnail.png">
+      <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+    <Content Include="Icon.ico" />
+    <Content Include="Icon2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LevelData\CyberErgoGoLevelData.csproj">
+      <Project>{8F55ECEB-8E61-41D7-B8E2-58755E63BD05}</Project>
+      <Name>CyberErgoGoLevelData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LevelLibrary\LevelLibrary.csproj">
+      <Project>{20027B5B-0F35-4ABB-95D9-C057CBA3B093}</Project>
+      <Name>LevelLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CyberErgoGoContent\CyberErgoGoContent.contentproj">
+      <Name>CyberErgoGoContent %28Content%29</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{C2A178CE-83AB-4BF3-A14B-176A039784FD}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 und x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Xna.Framework.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft XNA Framework Redistributable 4.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Animation\" />
+    <Folder Include="Game\Loading\" />
+    <Folder Include="Game\MovingObjects\Models\" />
+    <Folder Include="Sound\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
+  <!--
+      To modify your build process, add your task inside one of the targets below and uncomment it. 
+      Other similar extension points exist, see Microsoft.Common.targets.
+      <Target Name="BeforeBuild">
+      </Target>
+      <Target Name="AfterBuild">
+      </Target>
+    -->
+</Project>

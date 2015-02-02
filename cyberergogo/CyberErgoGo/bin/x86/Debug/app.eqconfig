@@ -1,0 +1,21 @@
+﻿<config Version="2">
+  <OutputFolder>$(AppDir)</OutputFolder>
+  <ReportFolderNetFull>$(SystemRoot)\Temp\EQATECProfilerLogs</ReportFolderNetFull>
+  <ReportFolderNetCF>\Temp\EQATECProfilerLogs</ReportFolderNetCF>
+  <AutoSnapshot>Main OnStop ApplicationEnd</AutoSnapshot>
+  <TinyMethodAction>Skip</TinyMethodAction>
+  <ServerControlHost />
+  <ServerControlPort>4515</ServerControlPort>
+  <RuntimeModuleLogLevel>Errors</RuntimeModuleLogLevel>
+  <ExcludeFiles>
+    <ExcludeFile>LevelLibrary.dll</ExcludeFile>
+    <ExcludeFile>LevelData.dll</ExcludeFile>
+    <ExcludeFile>BikeControls.dll</ExcludeFile>
+    <ExcludeFile>BEPUphysics.dll</ExcludeFile>
+  </ExcludeFiles>
+  <SignActions>
+    <SignAction action="Skip" publickey="ACQAAASAAACUAAAABgIAAAAkAABSU0ExAAQAAAEAAQDvJJE9T3BIuqsSJA5BgxGJjFpbuK9ZcnPeEY0BQ5vHWMwpTzwScBDWOmoMavIf4ce4yeepHAfK0idK23Yuosje+W0H9hOWgO3uGeJcYz1HIwhBIDg1j6lExx/3HxMuRls5lIx5tV339kT7cfeA3GEVr5RTaFCdpdKIlPRnbiDGpA==" usedby="E:\Uni\Beleg-Matrial\CyberErgoGo\CyberErgoGo\CyberErgoGo\bin\x86\Debug\BEPUphysics.dll" keyfile="" />
+  </SignActions>
+  <AppType>FullNet</AppType>
+  <InputFolderOK>true</InputFolderOK>
+</config>
